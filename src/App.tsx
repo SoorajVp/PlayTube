@@ -20,7 +20,7 @@ function App() {
         <div className="hidden md:block h-full overflow-y-auto">
           <Sidebar />
         </div>
-        <div className="flex-1 overflow-y-auto p-3">
+        <div className="flex-1 overflow-y-auto min-h-screen p-3">
           <Categories />
           <VideoContainer />
         </div>
