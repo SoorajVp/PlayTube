@@ -1,8 +1,14 @@
 
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-const initialState: { darkMode: boolean } = {
+interface initialStateType {
+    darkMode: boolean;
+    openMenu: boolean;
+}
+
+const initialState:initialStateType = {
     darkMode: false,
+    openMenu: false
 };
 
 const appSlice = createSlice({
@@ -12,9 +18,12 @@ const appSlice = createSlice({
         toggleDarkMode: (state) => {
             state.darkMode = !state.darkMode;
         },
+        toggleSideMenu: (state, action: PayloadAction<boolean>) => {
+            state.openMenu = action.payload;
+        },
     },
 });
 
-export const { toggleDarkMode } = appSlice.actions;
+export const { toggleDarkMode, toggleSideMenu } = appSlice.actions;
 
 export default appSlice.reducer;

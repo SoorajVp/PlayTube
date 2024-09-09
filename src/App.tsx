@@ -1,15 +1,13 @@
 import { useSelector } from "react-redux"
-import Categories from "./components/Header/Categories"
+import { RootState } from "./redux/store"
+import { Outlet } from "react-router-dom"
 import Navbar from "./components/Header/Navbar"
 import Sidebar from "./components/Sidebar/Sidebar"
-import VideoContainer from "./components/Video/VideoContainer"
-import { RootState } from "./redux/store"
 
 
 function App() {
 
   const { darkMode } = useSelector((store: RootState) => store.app)
-  // console.log(darkMode)
 
   return (
     <div className={`h-screen w-full flex flex-col ${darkMode && 'dark'}`}>
@@ -21,8 +19,7 @@ function App() {
           <Sidebar />
         </div>
         <div className="flex-1 overflow-y-auto min-h-screen p-3">
-          <Categories />
-          <VideoContainer />
+          <Outlet />
         </div>
       </div>
     </div>
