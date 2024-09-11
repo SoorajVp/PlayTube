@@ -38,4 +38,4 @@ export const VIDEO_WATCH_URL: string = "https://www.youtube.com/embed/"
 
 ### Run the project.
 
-`npm run dev`
+``npm run dev``
