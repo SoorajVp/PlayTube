@@ -9,13 +9,14 @@ const Watch = () => {
   const dispatch = useDispatch()
 
   useEffect(() => {
+    document.title = "Watch video | PlayTube"
     dispatch(toggleSideMenu(false))
   }, [])
 
   return (
     <div className='lg:flex w-full gap-4'>
       <div>
-        <iframe width="1100" height="600"
+        <iframe width="1200" height="650"
           src={VIDEO_WATCH_URL + searchParams.get("v")}
           title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin"
           allowFullScreen>
@@ -36,8 +37,6 @@ const Watch = () => {
         <div className='h-32 bg-neutral-200 dark:bg-neutral-800 rounded-md animate-pulse'></div>
         <div className='h-32 bg-neutral-200 dark:bg-neutral-800 rounded-md animate-pulse'></div>
         <div className='h-32 bg-neutral-200 dark:bg-neutral-800 rounded-md animate-pulse'></div>
-
-
 
       </div>
 

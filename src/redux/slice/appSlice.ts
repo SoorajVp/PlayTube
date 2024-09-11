@@ -8,7 +8,7 @@ interface initialStateType {
 
 const initialState:initialStateType = {
     darkMode: false,
-    openMenu: false
+    openMenu: true
 };
 
 const appSlice = createSlice({

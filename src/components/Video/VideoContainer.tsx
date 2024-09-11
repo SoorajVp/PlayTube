@@ -4,6 +4,7 @@ import VideoCard from './VideoCard'
 import ErrorComp from '../ErrorComp'
 import { useDispatch } from 'react-redux'
 import { toggleSideMenu } from '../../redux/slice/appSlice'
+import VideoCardShimmer from '../Shimmer/VideoCardShimmer'
 
 const VideoContainer = () => {
     const [videos, setVideos] = useState<any>([])
@@ -26,6 +27,20 @@ const VideoContainer = () => {
     }
 
     if (error) return <ErrorComp error={error} />
+
+    if (videos?.length === 0) return (
+        <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-5'>
+            <VideoCardShimmer />
+            <VideoCardShimmer />
+            <VideoCardShimmer />
+            <VideoCardShimmer />
+            <VideoCardShimmer />
+            <VideoCardShimmer />
+            <VideoCardShimmer />
+            <VideoCardShimmer />
+        </div>
+    )
+
 
     return (
         <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-5'>

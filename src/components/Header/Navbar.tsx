@@ -11,7 +11,7 @@ import { useState } from 'react';
 
 const Navbar = () => {
     const { darkMode, openMenu } = useSelector((store: RootState) => store.app)
-    const [ openSearch, setOpenSearch] = useState<boolean>(false)
+    const [openSearch, setOpenSearch] = useState<boolean>(false)
     const dispatch = useDispatch();
 
     const changeThemeMode = () => {
@@ -51,7 +51,7 @@ const Navbar = () => {
                 </Link>
             </div>
             <div className='hidden col-span-9 md:flex items-center justify-center'>
-                <input type="text" className='text-sm py-1.5 pl-3 outline-none border border-neutral-400 dark:border-neutral-600 dark:text-white dark:bg-neutral-900 rounded-l-full w-1/2' placeholder='Search' />
+                <input type="text" className='text-sm py-1.5 pl-3 outline-none border border-neutral-400 dark:border-neutral-600 dark:text-white dark:bg-neutral-900 rounded-l-full w-2/3' placeholder='Search' />
                 <button className='bg-gray-100 dark:bg-neutral-800 h-full py-1.5 px-4 border border-neutral-400 dark:border-neutral-600 rounded-r-full'>
                     <CiSearch size={25} className='dark:text-white' />
                 </button>
@@ -74,6 +74,8 @@ const Navbar = () => {
                 }
                 <FaUserCircle size={30} className='dark:text-white' />
             </div>
+            <div className='text-center bg-slate-50 h-10 p-5 font-normal flex font-mono translate-x-5 w-20'></div>
+            <div className="hover:opacity-75 opacity-50 hover:scale-150 scale-125"></div>
         </div>
     )
 }

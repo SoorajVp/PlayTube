@@ -1,50 +1,41 @@
-# React + TypeScript + Vite
+# PlayTube Video Web Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A web app using the YouTube API where users can watch videos. Built with a responsive UI for a smooth video browsing experience.
 
-Currently, two official plugins are available:
+Utilized React + Typescript + TailwindCSS + redux-toolkit
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Get Started
 
-## Expanding the ESLint configuration
+### Clone the repository
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+`git clone https://github.com/SoorajVp/PlayTube.git` 
 
-- Configure the top-level `parserOptions` property like this:
+### Install the npm dependencies.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+`cd PlayTube` 
+`npm install`
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+
+### Configure the API Key for youtube-video api access. 
+
+- Api doesn't allow unregistered callers (callers without established identity). 
+
+- Please use API Key or other form of API consumer identity to call this API.
+
+- Check the [youtube-videos-api](https://developers.google.com/youtube/v3/docs/videos) documentation for more information
+
 
 ```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+// src/constant.ts
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+const API_KEY: string = "" // Added you api key here
+
+export const VIDEOLIST_API_URL: string = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=50&regionCode=IN&key=${API_KEY}`;
+
+export const VIDEO_WATCH_URL: string = "https://www.youtube.com/embed/"
+
 ```
+
+### Run the project.
+
+`npm run dev`
