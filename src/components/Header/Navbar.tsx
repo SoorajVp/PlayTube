@@ -24,18 +24,18 @@ const Navbar = () => {
 
     if (openSearch) {
         return (
-            <div className=' w-full p-2 px-4 dark:bg-neutral-900'>
-                <div className='flex items-center justify-center'>
-                    <div onClick={() => setOpenSearch(false)} className='flex items-center bg-neutral-100 dark:bg-neutral-800 rounded-full h-full p-1.5 cursor-pointer'>
-                        <IoArrowBackSharp size={28} className='text-neutral-900 dark:text-neutral-100' />
-                    </div>
-                    <input type="text" className='text-sm ml-2 py-1.5 pl-3 outline-none border border-neutral-400 dark:border-neutral-600 dark:text-white dark:bg-neutral-900 rounded-l-full w-full' placeholder='Search' />
-                    <button className='bg-gray-100 dark:bg-neutral-800 h-full py-1.5 px-4 border border-neutral-400 dark:border-neutral-600 rounded-r-full'>
+            <div className='flex items-center gap-2 w-full p-2 px-4 dark:bg-neutral-900'>
+                <div onClick={() => setOpenSearch(false)} className='flex items-center bg-neutral-100 dark:bg-neutral-800 rounded-full h-full p-1.5 cursor-pointer'>
+                    <IoArrowBackSharp size={28} className='text-neutral-900 dark:text-neutral-100' />
+                </div>
+                <div className='flex items-center w-full justify-center border border-neutral-400 dark:border-neutral-600 rounded-full'>
+                    <input type="text" className='text-sm py-1.5 pl-3 outline-none dark:text-white dark:bg-neutral-900 rounded-l-full w-full' placeholder='Search' />
+                    <button className='bg-gray-100 dark:bg-neutral-800 py-1.5 px-4 border-l border-neutral-400 dark:border-neutral-600 rounded-r-full'>
                         <CiSearch size={25} className='dark:text-white' />
                     </button>
-                    <div className='ml-2 flex items-center bg-neutral-100 dark:bg-neutral-800 rounded-full h-full p-1.5 '>
-                        <MdKeyboardVoice size={30} className='text-neutral-900 dark:text-neutral-100' />
-                    </div>
+                </div>
+                <div className='flex items-center bg-neutral-100 dark:bg-neutral-800 rounded-full h-full p-1.5 '>
+                    <MdKeyboardVoice size={30} className='text-neutral-900 dark:text-neutral-100' />
                 </div>
             </div>
         )
@@ -50,12 +50,15 @@ const Navbar = () => {
                     <h4 className='text-lg font-bold pl-1 text-neutral-800 dark:text-gray-200'>PlayTube</h4>
                 </Link>
             </div>
-            <div className='hidden col-span-9 md:flex items-center justify-center'>
-                <input type="text" className='text-sm py-1.5 pl-3 outline-none border border-neutral-400 dark:border-neutral-600 dark:text-white dark:bg-neutral-900 rounded-l-full w-2/3' placeholder='Search' />
-                <button className='bg-gray-100 dark:bg-neutral-800 h-full py-1.5 px-4 border border-neutral-400 dark:border-neutral-600 rounded-r-full'>
-                    <CiSearch size={25} className='dark:text-white' />
-                </button>
-                <div className='flex items-center bg-neutral-100 dark:bg-neutral-800 rounded-full h-full px-1.5 ml-2 '>
+            <div className='hidden col-span-9 md:flex items-center justify-center gap-2'>
+                <div className='flex items-center justify-center w-2/3 border border-neutral-400 dark:border-neutral-600 rounded-full'>
+
+                    <input type="text" className='text-sm py-1.5 pl-3 outline-none dark:text-white dark:bg-neutral-900 rounded-l-full w-full' placeholder='Search' />
+                    <button className='bg-gray-100 dark:bg-neutral-800 py-1.5 px-4 border-l border-neutral-400 dark:border-neutral-600 rounded-r-full'>
+                        <CiSearch size={25} className='dark:text-white' />
+                    </button>
+                </div>
+                <div className='flex items-center bg-neutral-100 dark:bg-neutral-800 rounded-full h-full p-1.5'>
                     <MdKeyboardVoice size={30} className='text-neutral-900 dark:text-neutral-100' />
                 </div>
             </div>
@@ -74,8 +77,8 @@ const Navbar = () => {
                 }
                 <FaUserCircle size={30} className='dark:text-white' />
             </div>
-            <div className='text-center bg-slate-50 h-10 p-5 font-normal flex font-mono translate-x-5 w-20'></div>
-            <div className="hover:opacity-75 opacity-50 hover:scale-150 scale-125"></div>
+            {/* <div className='text-center bg-slate-50 h-10 p-5 font-normal flex font-mono translate-x-5 w-20'></div>
+            <div className="hover:opacity-75 opacity-50 hover:scale-150 scale-125"></div> */}
         </div>
     )
 }
